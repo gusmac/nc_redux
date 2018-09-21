@@ -18,3 +18,5 @@
   <dd><%= @post.body %></dd>
 
 </dl>
+<h3>Comments</h3>
+<%= render partial: "comments/form", locals: { commentable: @post } %>
