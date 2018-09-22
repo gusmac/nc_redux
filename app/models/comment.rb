@@ -6,4 +6,12 @@ class Comment < ApplicationRecord
   def comments
     Comment.where(commentable: commentable, parent_id: id)
   end
+
+  def destroy
+    update(user: nil, body: nil)
+  end
+
+  def deleted?
+    user.nil?
+  end
 end
