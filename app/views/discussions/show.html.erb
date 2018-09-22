@@ -15,3 +15,7 @@
   <dd><%= @discussion.title %></dd>
 
 </dl>
+<h3>Comments</h3>
+<%= render partial: "comments/form", locals: { commentable: @discussion } %>
+
+<%= render @discussion.comments.where(parent_id: nil), max_nesting: 5 %>
